@@ -1,0 +1,11 @@
+#ifndef HOLBERTON_H
+#defina HOLBERTON_H
+
+#include <stdarg.h>
+typedef stract print
+{
+  char *t
+    int (*f)(va_list)
+} print_t
+
+
