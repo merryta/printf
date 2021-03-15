@@ -64,3 +64,4 @@ char exchange_X(unsigned int n)
 			return (str[j]);
 		j++;
 	}
+}
