@@ -1,32 +1,30 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
-
+#include <stdio.h> /* moved from _printf.c */
+#include <unistd.h>
 #include <stdarg.h>
+#include <limits.h>
+#include <stdlib.h>
 /**
- * struct print - structure for printing various types
- * @t: type to print
- * @f: function to print
+ * struct id_function - structure of functions and id
+ * @id: identifiers of conversion
+ * @f:function pointer of id
  */
-typedef struct print
+typedef struct id_function
 {
-	char *t;
-	int (*f)(va_list);
-} print_t;
-
-int _putchar(char c);
+	char id;
+	int (*f)();
+} function_t;
 int _printf(const char *format, ...);
-int print_c(va_list c);
-int print_s(va_list s);
-int print_i(va_list i);
-int print_d(va_list d);
-int print_u(va_list u);
-int print_b(va_list b);
-int print_o(va_list o);
-int print_x(va_list x);
-int print_X(va_list X);
-int print_p(va_list p);
-int print_S(va_list S);
-int print_r(va_list r);
-int print_R(va_list R);
-
-#endif  /* _HOLBERTON_H */
+int _putchar(char c);
+int _printf_c(va_list flist);
+int _printf_s(va_list flist);
+int print_number(va_list flist);
+int _print_b(va_list flist);
+int _print_o(va_list flist);
+int _print_u(va_list flist);
+int _print_x(va_list flist);
+char exchange_x(unsigned int n);
+int _print_X(va_list flist);
+char exchange_X(unsigned int n);
+#endif
