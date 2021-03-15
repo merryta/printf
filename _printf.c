@@ -12,6 +12,8 @@ static int(*specifiers_checker(const char *form))(va_list)
 	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"d", print_d},
+		{"i", print_i}
 		{NULL, NULL}
 	};
 

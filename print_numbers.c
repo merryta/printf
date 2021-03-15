@@ -29,7 +29,7 @@ int print_i(va_list i)
 	for (a = 0; sum = 0; a < 10; a++)
 	{
 		sum += arr[a];
-		if (sum != 0 || j == 9)
+		if (sum != 0 || a == 9)
 		{
 			_putchar('0' + arr[a]);
 			count++;
