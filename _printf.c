@@ -2,69 +2,80 @@
 #include <stdlib.h>
 
 /**
- * specifiers_checker - checks if the specifier is in valid format
- * @form: possible format specifier
- * Return: returns pointer to the valid function or NULL
+ * check_for_specifiers - checks if there is a valid format specifier
+ * @format: possible format specifier
+ *
+ * Return: pointer to valid function or NULL
  */
-static int(*specifiers_checker(const char *form))(va_list)
+static int (*check_for_specifiers(const char *format))(va_list)
 {
-	unsigned int idx;
+	unsigned int i;
 	print_t p[] = {
 		{"c", print_c},
 		{"s", print_s},
+		{"i", print_i},
 		{"d", print_d},
-		{"i", print_i}
+		{"u", print_u},
+		{"b", print_b},
+		{"o", print_o},
+		{"x", print_x},
+		{"X", print_X},
+		{"p", print_p},
+		{"S", print_S},
+		{"r", print_r},
+		{"R", print_R},
 		{NULL, NULL}
 	};
 
-	for (idx = 0; p[idx].t != NULL; idx++)
+	for (i = 0; p[i].t != NULL; i++)
 	{
-		if (*(p[idx].t) == *form)
+		if (*(p[i].t) == *format)
 		{
 			break;
 		}
 	}
-	return (p[idx].f);
+	return (p[i].f);
 }
 
 /**
- * _printf - It produces output according to format
- * @format: list all arguments passed to the function
- * Return: returns number of characters printed
+ * _printf - prints anything
+ * @format: list of argument types passed to the function
+ *
+ * Return: number of characters printed
  */
 int _printf(const char *format, ...)
 {
-	unsigned int idx, count = 0;
+	unsigned int i = 0, count = 0;
 	va_list valist;
 	int (*f)(va_list);
 
 	if (format == NULL)
 		return (-1);
 	va_start(valist, format);
-	while (format[idx])
+	while (format[i])
 	{
-		for (idx = 0; format[idx] != '%' && format[idx];  idx++)
+		for (; format[i] != '%' && format[i]; i++)
 		{
-			_putchar(format[idx]);
+			_putchar(format[i]);
 			count++;
 		}
-		if (!format[idx])
+		if (!format[i])
 			return (count);
-		f = specifiers_checker(&format[idx + 1]);
+		f = check_for_specifiers(&format[i + 1]);
 		if (f != NULL)
 		{
 			count += f(valist);
-			idx += 2;
+			i += 2;
 			continue;
 		}
-		if (!format[idx + 1])
+		if (!format[i + 1])
 			return (-1);
-		_putchar(format[idx]);
+		_putchar(format[i]);
 		count++;
-		if (format[idx + 1] == '%')
-			idx += 2;
+		if (format[i + 1] == '%')
+			i += 2;
 		else
-			idx++;
+			i++;
 	}
 	va_end(valist);
 	return (count);
