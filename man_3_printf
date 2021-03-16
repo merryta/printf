@@ -1,4 +1,4 @@
-.Dd 20/07/20              
+.Dd 16/03/21
 .Dt _PRINTF(3)     
 .Os Holberton
 .Sh NAME                 
@@ -57,8 +57,8 @@ A '%' is written. No argument is converted. The complete conversion specificatio
 .Pp
 .Sh AUTHORS
 .Bl -tag -width "/Users/joeuser/Library/really_long_file_name" -compact
-.It Created by Óscar Morales - Laura Alvarez
-.It Holberton students cohort 12 
+.It Created by Ó meron mamo - john katua
+.It Holberton students cohort 2 
 .El                    
 .Sh REPORTING BUGS              
 .Bl -tag -width "/Users/joeuser/Library/really_long_file_name" -compact
