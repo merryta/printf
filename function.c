@@ -1,14 +1,5 @@
 #include "holberton.h"
 /**
- * _putchar - function to print
- * @c: character
- * Return: no zero
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-/**
  * _printf_c - function to print characters
  * @flist: list of arguments
  * Return: no zero
