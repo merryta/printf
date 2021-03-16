@@ -1,3 +1,3 @@
 # printf
 
-printf is c language function to do formatted printing.
+Printf is c language function to do formatted printing.
