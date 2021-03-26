@@ -23,6 +23,12 @@ _print_o.c	| converts a decimal to  base 8 __o__
 _print_u.c	| converts decimal to unsigned int __u__
 _print_x.c	| prints a number in hexadecimal __x__
 
+### How to use the code
+
+Git clone
+
+$ git clone https://github.com/merryta/printf.git
+
 ### Author
 
 JOHN KATUA - [Github](https://github.com/johnkatua)
