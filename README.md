@@ -23,6 +23,20 @@ _print_o.c	| converts a decimal to  base 8 __o__
 _print_u.c	| converts decimal to unsigned int __u__
 _print_x.c	| prints a number in hexadecimal __x__
 
+### Conversion specifiers
+
+All our conversion specifiers in the files
+
+Specifier | Returns
+--------- | --------
+c	  | returns character
+s 	  | returns a string
+i and d	  | converts int to signed decimal
+o     	  | converts a decimal to base 8
+u	  | converts decimal to unsigned int
+x	  | converts unsigned int into unsigned hexadecimal
+%	  | write '%'
+
 ### How to use the code
 
 Git clone
